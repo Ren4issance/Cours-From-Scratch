@@ -1,0 +1,65 @@
+/* Centrer un élement horizontalement parfaitement  */
+/* Si un élément est en block  */
+
+.titre {
+    text-align: center;
+}
+.boite {
+    margin: 0 auto;
+    display: block; /* Si jamais il n'est pas en block de base (img, a, span, button) */
+}
+
+/* ************** FLEX ************* */
+/* Flexbox est un modèle de mise en page CSS3. Il permet de disposer des éléments dans un conteneur, de les aligner et de les distribuer. */
+
+/* Centrer un élément dans sa boite (enfant unique) */
+.parent-d-1-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Répartir équitablement des éléments dans la page  */
+.paren-de-plusieurs-enfants {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ************** GRID ************* */
+/* Grid est un modèle de mise en page CSS3. Il permet de disposer des éléments dans un conteneur, de les aligner et de les distribuer. */
+
+/* Répartir précisemment des éléments dans la largeur avec des tailles différentes */
+.parent-de-3-elements {
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+}
+
+/* Créer des grilles complexes */
+.parent-des-elements {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 300px;
+    grid-template-areas:
+        "header header header"
+        "nav article ads"
+        "footer footer footer";
+}
+
+.enfant1  {
+    grid-area: header;
+}
+
+/* *********** ABSOLUTE ***********  */
+/* Positionner un élément en absolu */
+
+/* Centrer parfaitement un élément */
+.parent {
+    position: relative;
+}
+.enfant  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

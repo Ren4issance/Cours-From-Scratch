@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "div1 div1 div2"
+    "div4 div3 div2"
+    "div4 div5 div5";
+    gap: 10px;
+}
+div:nth-child(1) {
+  grid-area: div1;
+  background: yellow;
+}
+div:nth-child(2) {
+  grid-area: div2;
+  background: purple;
+}
+div:nth-child(3) {
+  grid-area: div3;
+  background: green;
+}
+div:nth-child(4) {
+  grid-area: div4;
+  background: red;
+}
+div:nth-child(5) {
+  grid-area: div5;
+  background: orchid;
+}
