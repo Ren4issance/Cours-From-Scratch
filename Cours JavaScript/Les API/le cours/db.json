@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": "e639",
+      "pseudo": "John",
+      "message": "Yo les potes !"
+    },
+    {
+      "pseudo": "John",
+      "message": "Yo les potes !",
+      "id": "HmWb8ib"
+    },
+    {
+      "pseudo": "John",
+      "message": "Yo les potes !",
+      "id": "1evwumE"
+    }
+  ]
+}
