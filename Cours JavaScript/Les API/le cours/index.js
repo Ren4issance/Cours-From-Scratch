@@ -59,3 +59,80 @@ document.querySelector("form").addEventListener("submit", () => {
         console.log("data envoyée")
     );
 });
+
+//------------------------------------------------------------
+//Asynchrone
+//------------------------------------------------------------
+
+// setTimoout(() => {
+//     log("test");
+// }, 2000);
+
+// Promise
+// fetch("monlien").then((res) => res);
+
+// async await
+async function fetchData() {
+    await fetch("monlien");
+    // attend que le await soit exécuté avant de faire la suite
+
+    executeFonction();
+}
+
+const fecthData2 = async () => {
+    await fetch("monlien");
+
+    executeFonction();
+};
+
+//------------------------------------------------------------
+// LE JSON
+//------------------------------------------------------------
+
+// Méthode .json() => transforme le json en objet JavaScript, elle s'auto-résout en renvoyant le Body de la requête
+
+fetch("data.json")
+    .then((res) => res.json())
+    .then((data) => {
+        // console.log(data);
+        // console.log(JSON.stringify(data)); // Stringify => transforme un objet JavaScript en JSON
+        let settings = JSON.stringify(data);
+        // Parse => transforme un JSON en objet JavaScript
+        // console.log(JSON.parse(settings));
+    });
+
+//------------------------------------------------------------
+// Les WEB API
+//------------------------------------------------------------
+
+// CLIENT STORAGE
+// localStorage
+
+localStorage.data = "Je stock la data";
+// document.body.textContent = localStorage.data;
+
+localStorage.removeItem("data");
+
+const obj = {
+    pseudo: "John",
+    age: 25,
+};
+
+// IIl faut passer des chaines de caractères
+localStorage.user = JSON.stringify(obj);
+
+// console.log(JSON.parse(localStorage.user))
+// ---
+// session Storage
+// ---
+// sessionStorage.dataSettings = "Je stock la data";
+// console.log(sessionStorage.dataSettings);
+// sessionStorage.clear();
+// ---
+// Cookies
+// ---
+
+document.cookie = "username=John Doe";
+
+// Bonne pratique
+document.cookie = "pseudo=FS;path=/;max-age=45000; secure; samesite";
